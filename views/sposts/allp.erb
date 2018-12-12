@@ -1,0 +1,13 @@
+
+<h1>All Articles</h1>
+   <ol>
+     <%@sposts.each do |spos|%>
+     <li>Title <% spos.title%><br>
+       Post: <%= spos.content%>
+
+       <form  action=<%=spos.id%> method="post">
+         <input type="submit" name="delete" value="Delete Article">
+       </form>
+     </li>
+     <%end%>
+   </ol>
