@@ -60,7 +60,7 @@ get "/users/signup" do
 end
 
 post "/users/signup" do
-  @user =  User.new=@user.name(name: params[:name], email: params[:email], birthday: params[:birthday], password: params[:password])
+  @user =  User.new(name: params[:name], email: params[:email], birthday: params[:birthday], password: params[:password])
   @user.save
   session[:user_id] = @user.id
   redirect "/users/#{@user.id}"
@@ -86,11 +86,14 @@ post "/sposts/spost" do #CREATE
   @spost.save
   redirect "/sposts/#{@spost.id}"
 end
-
+### SEE ALL POST
 get '/sposts/allp' do
   @sposts = Spost.all
   erb :'/sposts/allp'
 end
+
+######
+
 
 get "/sposts/:id" do
   @spost =  Spost.find(params["id"])

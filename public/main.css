@@ -1,0 +1,166 @@
+body{
+  background-image: url("images/picture1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/* ######### */
+/* CSSS */
+/* **************************************************************** */
+form {
+text-align: center;
+font-size: 15px;
+}
+.wrapper {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    margin: 3% auto;
+    box-shadow: 2px 18px 70px 0px white;
+    overflow: hidden;
+}
+
+.login-text {
+    width: 800px;
+    height:450px;
+    background: linear-gradient(to left, black, rgb(114, 133, 168));
+    position: absolute;
+    top: -300px;
+    box-sizing: border-box;
+    padding: 6%;
+    transition: all 0.5s ease-in-out;
+    z-index: 11;
+}
+
+.text {
+    margin-left: 20px;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.3s;
+
+    a, a:visited {
+        font-size: 36px;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+    }
+
+    hr {
+        width: 10%;
+        float: left;
+        font-size: 16px;
+    }
+
+    input {
+        margin-top: 30px;
+        height: 40px;
+        width: 300px;
+        border-radius: 2px;
+        border: none;
+        opacity: 0.6;
+        outline: none;
+        padding-left: 10px;
+    }
+
+    input[type=text] {
+        margin-top: 60px;
+    }
+
+    button {
+        margin-top: 60px;
+        height: 40px;
+        width: 140px;
+        outline: none;
+    }
+  /* margin-top{ 30px;
+        height: 40px;
+        width: 300px;
+        border-radius: 2px;
+        border: none;
+        opacity: 0.6;
+        outline: none;
+        padding-left: 10px;
+} */
+    .login-btn {
+        border: none;
+        border-radius: 2px;
+    }
+
+    .signup-btn {
+        background: transparent;
+        /* border: 2px solid #fff;; */
+        border-radius: 2px;
+        margin-left: 30px;
+    }
+}
+
+.slideb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    background-image:url("images/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-color: white;
+
+
+    border: 2px solid black;
+    position: absolute;
+    bottom: -30px;
+    left: 370px;
+    outline: none;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.call-text {
+    /* background-color: #fff; */
+    width: 800px;
+    height: 450px;
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+    box-sizing: border-box;
+    text-align: center;
+
+    h1 {
+        font-size: 42px;
+        margin-top: 10%;
+        color: #696a86;
+
+
+    }
+
+    button {
+        height: 40px;
+        width: 180px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(to left, black, blue);
+        /* color: #fff; */
+        font-weight: bolder;
+        margin-top: 30px;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+.show-hide {
+    display: block;
+}
+
+.expand {
+    transform: translateY(300px);
+}
+
+
+
+
+
+
+
+/* ****************************************************************************************** */
