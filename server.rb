@@ -72,6 +72,21 @@ get "/users/:id" do
   erb :"/users/profile"
 end
 
+get "/users/?" do
+  @user =  User.all
+    erb :"/users/profile"
+end
+
+post "/users/:id" do
+  @user =  User.find(params["id"])
+  @user.destroy
+
+    session["user_id"] = nil
+    redirect "/"
+end
+
+
+# **************
 
 get "/sposts/spost" do
   if session['user_id'] == nil

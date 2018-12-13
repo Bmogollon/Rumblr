@@ -1,4 +1,3 @@
-console.log("conected");
 
 var slideb = document.querySelector(".slideb");
 var check = 0;

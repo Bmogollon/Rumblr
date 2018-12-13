@@ -1,5 +1,5 @@
-body{
-  background-image: url("images/picture1.jpg");
+html{
+  background-image: url("images/picture2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -19,14 +19,15 @@ font-size: 15px;
     height: 500px;
     position: relative;
     margin: 3% auto;
-    box-shadow: 2px 18px 70px 0px white;
+    box-shadow: 2px 18px 70px 0px rgb(37, 232, 68);
     overflow: hidden;
 }
+
 
 .login-text {
     width: 800px;
     height:450px;
-    background: linear-gradient(to left, black, rgb(114, 133, 168));
+    background: linear-gradient(to left, transparent,black);
     position: absolute;
     top: -300px;
     box-sizing: border-box;
@@ -102,7 +103,7 @@ font-size: 15px;
     height: 60px;
     border-radius: 50%;
 
-    background-image:url("images/logo.png");
+    background-image:url("images/soccer.png");
     background-position: center;
     background-size: contain;
     background-color: white;
@@ -164,3 +165,10 @@ font-size: 15px;
 
 
 /* ****************************************************************************************** */
+
+.container.medium{
+  /* max-width: 100rem;
+padding: 160px; */
+padding-left: 649px;
+padding-top: 356px;
+}
