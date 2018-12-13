@@ -1,4 +1,6 @@
-gem "sinatra-activerecord"
+gem "sinatra-activerecord" do
+
+
  gem "sinatra"
  gem "rake"
 
@@ -9,3 +11,4 @@ gem "sinatra-activerecord"
  group :production do
    gem "pg"
  end
+end
