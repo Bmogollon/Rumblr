@@ -18,11 +18,9 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     mustermann (1.0.3)
-    pg (1.1.3)
     rack (2.0.6)
     rack-protection (2.0.4)
       rack
-    rake (12.3.2)
     sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -31,7 +29,6 @@ GEM
     sinatra-activerecord (2.0.13)
       activerecord (>= 3.2)
       sinatra (>= 1.0)
-    sqlite3 (1.3.13)
     thread_safe (0.3.6)
     tilt (2.0.9)
     tzinfo (1.2.5)
@@ -41,11 +38,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg
-  rake
-  sinatra
   sinatra-activerecord
-  sqlite3
 
 BUNDLED WITH
    1.17.1
