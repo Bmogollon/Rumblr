@@ -9,5 +9,3 @@ gem "sinatra-activerecord"
  group :production do
    gem "pg"
  end
-
-end
