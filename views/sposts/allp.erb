@@ -1,16 +1,37 @@
 
-<h1>All Articles</h1>
-   <ol>
-     <%@sposts.each do |spos|%>
-     <li>Title <% spos.title%><br>
-       Post: <%= spos.content%>
 
-       <form  action=<%=spos.id%> method="post">
-         <input type="submit" name="delete" value="Delete Article">
-       </form>
-     </li>
-     <%end%>
-   </ol>
 
- <li><a href="/users/<%= session['user_id'] %>">My Profile</a></li>
-   <link rel="stylesheet" href="/main.css">
+
+<div class="container">
+	<div class="front side">
+		<div class="content">
+			<h1>ALL ARTICLES</h1>
+      <li><a href="/users/<%= session['user_id']%>">My Profile</a></li>
+
+		</div>
+	</div>
+	<div class="back side">
+		<div class="content">
+      <ol>
+        <%@sposts.each do |spos|%>
+        <li>Title <% spos.title%><br>
+          Post: <%= spos.content%><br>
+
+          <% user = User.find(spos.user_id)%>
+         Name:  <%= user.name %>
+
+
+
+
+         <% if spos.user_id == session['user_id']%>
+          <form  action=<%=spos.id%> method="post">
+            <input type="submit" name="delete" value="Delete Article">
+          </form>
+          <% end %>
+        </li>
+        <%end%>
+      </ol>
+		</div>
+	</div>
+
+</div>

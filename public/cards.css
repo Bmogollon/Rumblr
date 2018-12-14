@@ -1,0 +1,147 @@
+body{
+  height:45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: pre;
+Passworserve-3d;
+  position: relative;
+font-family: "Lucida Console", Monaco, monospace;
+}
+.container h1{
+  font-size: 50px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.container h2, p,ul,li, a {
+color: white;
+font-family: "Lucida Console", Monaco, monospace;
+list-style: none;
+float: left;
+  width: 55.5%;
+  padding: 10px;
+  font-size: 20px;
+
+}
+
+
+.content img{
+  height: 450px;
+  width: 450px;
+}
+.container {
+	min-width: 100%;
+	min-height: 100%;
+	border-radius: 20px;
+	position: relative;
+	-webkit-transition: 1.5s ease-in-out;
+	transition: 1.5s ease-in-out;
+	transform-style: preserve-3d;
+  /* width: 70.6%; */
+  /* padding: 10px; */
+  /* margin: 0; */
+  /* padding:70px; */
+}
+.container h2{
+  color:white;
+  /* font-weight: bold; */
+}
+
+.side {
+	position: absolute;
+	text-align: center;
+	width:100%;
+	height: 900px;
+  	margin: 0;
+	/* padding: 50px 50px; */
+	color: #fff;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	border-radius: 20px;
+}
+.content {
+	transform: translatez(70px) scale(0.8);
+	line-height: 1.5em;
+}
+.content h2 {
+	position: relative;
+}
+/* .content ol {
+	margin-top: 50px;
+	line-height: 2em;
+} */
+.front {
+	/* z-index: 10; */
+background-image: url("/images/field.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+.back {
+	transform: rotateY(180deg);
+	padding-top: 10px;
+background-image: url("/images/field.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+.container:hover {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+form {
+	text-align: left;
+
+}
+.back h2 {
+	margin: 0;
+}
+
+
+
+/* **************************** */
+
+.box {
+  width:230px;
+  height:80px;
+    padding: 5px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size:20px;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, transparent, white, transparent);
+	left: -100%;
+	transition: 0.5s;
+}
+.box:after {
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.box:hover {
+  animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}

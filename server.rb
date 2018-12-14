@@ -3,11 +3,11 @@ require 'sinatra'
 
 enable :sessions
 
-if ENV['RACK_ENV'] == 'development'
-  set :database, {adapter: "sqlite3", database: "rumblr.sqlite3"}
+if ENV['RACK_ENV']
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 else
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 end
 
 class User < ActiveRecord::Base
@@ -34,13 +34,15 @@ end
 
 post "/login" do
   user = User.find_by(email: params["email"])
-  puts "this: #{user}"
 
   if user != nil
     if user.password == params["password"]
       session[:user_id] = user.id
       redirect "/users/#{user.id}"
+    else
+      redirect "/"
     end
+
   end
 end
 
@@ -74,12 +76,12 @@ end
 get "/users/:id" do
   @user =  User.find(params["id"])
   erb :"/users/profile"
-end
+  end
 
 get "/users/?" do
   @user =  User.all
     erb :"/users/profile"
-end
+    end
 
 post "/users/:id" do
   @user =  User.find(params["id"])
@@ -101,14 +103,15 @@ get "/sposts/spost" do
 end
 
 post "/sposts/spost" do #CREATE
-  @spost = Spost.new(title: params[:title], content: params[:content], user_id: params[:user_id])
+  @spost = Spost.new(title: params[:title], content: params[:content], user_id: session[:user_id])
   @spost.save
   redirect "/sposts/#{@spost.id}"
 end
 ### SEE ALL POST
 get '/sposts/allp' do
   @sposts = Spost.all
-  erb :'/sposts/allp'
+  erb :'/sposts/allp',:layout => false do
+  end
 end
 
 ######
@@ -131,4 +134,12 @@ post "/sposts/:id" do
   @spost.destroy
 
   redirect "/sposts/allp"
+end
+
+
+
+get "/everyp" do
+  @spost = Spost.last(20)
+
+  erb :everyp
 end

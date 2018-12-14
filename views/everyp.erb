@@ -1,0 +1,14 @@
+<div>
+  <li><a href="/users/<%= session['user_id']%>">My Profile</a></li>
+
+  <%@spost.each do |spo|%>
+  <%if spo.user_id == session['user_id']%>
+  <% user = User.find(spo.user_id)%>
+  Name:  <%= user.name %>
+  Title <% spo.title%><br>
+    Post: <%= spo.content%><br>
+
+
+    <% end %>
+    <% end %>
+</div>

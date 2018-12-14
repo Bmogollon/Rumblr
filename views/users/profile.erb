@@ -1,24 +1,39 @@
 
-<h1><%=@user.name%>'s Profile</h1>
-   <p>Name: <%=@user.name%></p>
-   <p>Email: <%=@user.email%></p>
-   <p>birthday: <%=@user.birthday%></p>
 
 
-   <ul>
-     <li><a href="/sposts/spost">Create Post</a></li>
+     <div class="container">
+     	<div class="front side">
+     		<div class="content">
+     			<h1>Welcome <%=@user.name%></h1>
+          <img src="/images/soccer1.png" >
+     		</div>
+     	</div>
+     	<div class="back side">
+     		<div class="content">
 
-          <li><a href="/sposts/allp">See all post</a></li>
-      <!-- <li><a href="/">Go Back Home</a></li> -->
-     <li>
-       <form action="/logout" method="post">
-         <input type="submit" name="logout" value="Logout">
-       </form>
+            <h2><%=@user.name%>'s Profile</h1><br>
+            <p>Name: <%=@user.name%></p><br>
+            <p>Email: <%=@user.email%></p><br>
+            <p>birthday: <%=@user.birthday%></p>
+            <ul>
+              <li><a class="box" href="/sposts/spost">Create Post</a></li><br>
 
-     </ul>
+              <li><a class="box" href="/everyp">See My Post</a></li>
+              <li><a class="box" href="/sposts/allp">See Everyone Post</a></li><br>
+            </ul>
 
-     <form action="/users/<%=@user.id%>" method="post">
-              <input class="primary-btn" type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
-            </form>
+              <form action="/logout" method="post">
+                <input  class="box" type="submit" type="logout" value="Logout">
+              </form><br>
 
-<!-- <link rel="stylesheet" href="/main.css"> -->
+
+          <form action="/users/<%=@user.id%>" method="post">
+            <input class="box" type="submit" name="delete" value="Delete Account" onclick="alert('Account Deleted!')">
+          </form>
+     		</div>
+     	</div>
+
+     </div>
+
+
+     <link rel="stylesheet" href="/cards.css">
