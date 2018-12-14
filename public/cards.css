@@ -11,9 +11,9 @@ body{
   align-items: center;
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: pre;
-Passworserve-3d;
+   -webkit-transform-style: preserve-3d;
+ transform-style: pre;
+ Passworserve-3d;
   position: relative;
 font-family: "Lucida Console", Monaco, monospace;
 }
@@ -46,15 +46,12 @@ float: left;
 	-webkit-transition: 1.5s ease-in-out;
 	transition: 1.5s ease-in-out;
 	transform-style: preserve-3d;
-  /* width: 70.6%; */
-  /* padding: 10px; */
-  /* margin: 0; */
-  /* padding:70px; */
+
 }
-.container h2{
+/* .container h2{
   color:white;
-  /* font-weight: bold; */
-}
+  font-size: 15px;
+} */
 
 .side {
 	position: absolute;
@@ -62,7 +59,6 @@ float: left;
 	width:100%;
 	height: 900px;
   	margin: 0;
-	/* padding: 50px 50px; */
 	color: #fff;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
@@ -81,14 +77,14 @@ float: left;
 } */
 .front {
 	/* z-index: 10; */
-background-image: url("/images/field.jpg");
+background-image: url("/images/field1.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 }
 .back {
 	transform: rotateY(180deg);
 	padding-top: 10px;
-background-image: url("/images/field.jpg");
+background-image: url("/images/field1.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 }
@@ -99,10 +95,11 @@ background-size: cover;
 form {
 	text-align: left;
 
+
 }
-.back h2 {
+/* .back h2 {
 	margin: 0;
-}
+} */
 
 
 

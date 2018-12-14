@@ -1,0 +1,33 @@
+
+
+
+
+
+  <a class="nav" href="/users/<%= session['user_id']%>">Back To Profile</a>
+  <a class="nav" href="/sposts/allp">News Feed</a>
+  <a class="nav" href="/sposts/spost">Create Post</a>
+
+  <div class="grid-container">
+
+  <% @sposts.each do |spo|%>
+  <%if spo.user_id == session['user_id']%>
+  <% user = User.find(spo.user_id)%>
+<div class="grid-item">
+Name:  <%= user.name %><hr>
+Title <%= spo.title%><hr>
+ <%= spo.content%>
+
+  <form  action ="<%=spo.id%>" method="post">
+    <input class = "nav" type="submit" name="delete" value="Delete Article">
+  </form>
+
+</div>
+
+<!-- </div> -->
+
+    <% end %>
+    <% end %>
+
+<!-- </div> -->
+
+</div>

@@ -57,7 +57,6 @@ end
 # # SIGN UP
 get "/users/signup" do
   if session['user_id'] != nil
-    p "User already logged in"
     redirect "/"
   else
     erb :'/users/signup'
@@ -76,11 +75,13 @@ end
 get "/users/:id" do
   @user =  User.find(params["id"])
   erb :"/users/profile"
+
   end
 
 get "/users/?" do
   @user =  User.all
     erb :"/users/profile"
+
     end
 
 post "/users/:id" do
@@ -93,10 +94,9 @@ end
 
 
 # **************
-
+# POST
 get "/sposts/spost" do
   if session['user_id'] == nil
-    p 'User was not logged in'
     redirect '/'
     end
     erb :"sposts/spost"
@@ -108,38 +108,39 @@ post "/sposts/spost" do #CREATE
   redirect "/sposts/#{@spost.id}"
 end
 ### SEE ALL POST
-get '/sposts/allp' do
+get "/sposts/allp" do
   @sposts = Spost.all
-  erb :'/sposts/allp',:layout => false do
-  end
+  erb :"/sposts/allp"
 end
 
 ######
 
-
-get "/sposts/:id" do
-  @spost =  Spost.find(params["id"])
-  erb :"/sposts/content"
+get "/sposts/everyp" do
+  @sposts = Spost.all
+  erb :"/sposts/everyp"
 end
-
-
-#to DELETE an spost, be careful on what you're writing on here!
 get "/sposts/?" do
   @sposts = Spost.all
-  erb :"/sposts/content"
+  erb :"/sposts/everyp"
 end
+
 
 post "/sposts/:id" do
   @spost =  Spost.find(params["id"])
   @spost.destroy
 
-  redirect "/sposts/allp"
+  redirect "/sposts/everyp"
 end
 
 
 
-get "/everyp" do
+get "/sposts/everyp" do
   @spost = Spost.last(20)
 
-  erb :everyp
+  erb :"/sposts/everyp"
+end
+
+get "/sposts/:id" do
+  @spost =  Spost.find(params["id"])
+  redirect "/sposts/everyp"
 end

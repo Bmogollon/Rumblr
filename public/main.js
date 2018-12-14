@@ -9,12 +9,12 @@ slideb.addEventListener('click', function(e){
     loginText.classList.toggle('expand');
     if(check == 0)
     {
-        slideb.innerHTML = "<i class=\"slide-up\"></i>";
+        slideb.innerHTML = "<div class=\"slide-up\"></div>";
         check++;
     }
     else
     {
-        slideb.innerHTML = "<i class=\"slide-down\"></i>";
+        slideb.innerHTML = "<div class=\"slide-down\"></div>";
         check = 0;
     }
 })

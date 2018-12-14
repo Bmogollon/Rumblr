@@ -4,10 +4,17 @@ html{
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: "Lucida Console", Monaco, monospace;
+
 }
 
 
 
+a{
+  text-decoration: none;
+padding: 16px;
+
+}
 
 /* ######### */
 /* CSSS */
@@ -21,7 +28,7 @@ font-size: 15px;
     height: 450px;
     position: relative;
     margin: 3% auto;
-    box-shadow: 2px 18px 70px 0px white;
+    box-shadow: 2px 18px 70px 0px rgb(21, 131, 105);
     overflow: hidden;
 }
 
@@ -171,9 +178,31 @@ font-size: 15px;
 .container.medium{
   /* max-width: 100rem;
 padding: 160px; */
-padding-left: 649px;
+padding-left: 66%;
 padding-top: 356px;
 }
+
+.homeb {
+	background: linear-gradient(to right, black,transparent, black);
+	color: black;
+	width: 178px;
+	height: 56px;
+
+
+	text-align: center;
+	line-height: 70px;
+	font-size: 56px
+  font-family: "Lucida Console", Monaco, monospace;
+	letter-spacing: 0.2em;
+	transform: perspective(500px) rotateY(-15deg);
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
+
+
+}
+
+
 
 /* ********************************************************************************** */
 
@@ -187,10 +216,6 @@ padding-top: 356px;
       right: -10%;
 
 }
-a{
-  text-decoration: none;
-
-}
 /* ###### */
 /* other css gets it */
 /* ############################################################### */
@@ -199,12 +224,11 @@ a{
 	color: white;
 	width: 178px;
 	height: 56px;
-	/* width: */
-	/* height:  */
+
 	text-align: center;
 	line-height: 56px;
 	font-size: 56px
-	font-family: sans-serif;
+	/* font-family: sans-serif; */
 	letter-spacing: 0.2em;
 	border: 2px solid lightblack;
 	border-radius: 40%;
@@ -214,20 +238,25 @@ a{
 	transition: 0.5s;
 	position: relative;
 	overflow: hidden;
-  /* height: 100%; */
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: center; */
+
+}
+.box:after {
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .box:hover {
 	transform: perspective(500px) rotateY(15deg);
 	text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
 	box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+  animation: slidebg 2s linear infinite;
+
 }
 
 .box::before {
-	content: '';
+  content: '';
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -239,7 +268,11 @@ a{
 .box:hover::before {
 	left: 100%;
 }
-
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
 
 
 /* ***************************************************************************
@@ -247,16 +280,115 @@ a{
 /*  */
 /* GRID */
 
+
+
+
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-column-gap: 60px;
+  grid-template-columns:300px 300px 300px;
+  grid-template-rows: 300px 300px 300px ;
+  grid-row-gap: 170px;
+  justify-content: center;
+  color: black;
+  font-weight: 100px;
+  padding: 30px;
+  /* font-family: "Lucida Console", Monaco, monospace; */
+
+
 }
+
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
+  /* padding: 20px; */
+  font-size: 13px;
+  height: 400px;
+background-color: black;
+background: linear-gradient(to right, transparent, silver, black);
+
   text-align: center;
+
+  line-height: 56px;
+  font-size: 56px
+
+
+  border: 2px solid lightblack;
+  border-radius: 10%;
+  transform: perspective(500px) rotateY(-15deg);
+
+  transition: 0.5s;
+  position: relative;
+  overflow: scroll;
+
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;
+  }
+.grid-item:hover {
+	transform: perspective(500px) rotateY(15deg);
+	text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ************************** */
+/* BUTTONS */
+
+
+
+.nav {
+	background: linear-gradient(to right, transparent,black, rgb(26, 78, 89));
+	color: white;
+	width: 178px;
+	height: 56px;
+
+
+	text-align: center;
+	line-height: 56px;
+	font-size: 56px
+  /* font-family: "Lucida Console", Monaco, monospace; */
+	letter-spacing: 0.2em;
+	border: 2px solid lightblack;
+	border-radius: 40%;
+	transform: perspective(500px) rotateY(-15deg);
+	nav-shadow: 2px 0 0 5px black;
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.nav:hover {
+	transform: perspective(500px) rotateX(30deg);
+
+}
+
+
+
+/* *********************** */
+.post-grid{
+display: grid;
+justify-content: center;
+color: black;
+}
+
+
+.grid-items{
+  background-color: white;
+  border: 1px dashed black;
+  background: linear-gradient(to right, rgb(12, 59, 38), white, transparent);
+
+  font-size: 13px;
+  height: 400px;
+  text-align: center;
+
+  line-height: 56px;
+  font-size: 56px
+
+  border: 2px solid lightblack;
+  border-radius: 10%;
+
+  transition: 0.5s;
+  position: relative;
+
 }

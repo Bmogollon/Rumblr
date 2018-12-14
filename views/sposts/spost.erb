@@ -1,4 +1,12 @@
+
+
+
+<div class = "post-grid">
+  <a class="nav" href="/users/<%= session['user_id']%>">Back To Profile</a>
+  <a class="nav" href="/sposts/allp">News Feed</a>
+  <a class="nav" href="/sposts/everyp">See My Post</a>
 <form action="/sposts/spost" method="post">
+<div class = "grid-items">
       Post Title <br>
       <input type="text" name="title"> <br>
       Post <br>
@@ -6,3 +14,5 @@
       <input type="submit" name="Submit">
     </form>
     <link rel="stylesheet" href="/main.css">
+</div>
+</div>

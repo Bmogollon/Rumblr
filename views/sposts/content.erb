@@ -1,6 +1,7 @@
+
 <h2>Name<%= @spost.content %></h2>
 <h2><%= @spost.title %></h2>
 
-<a href="/sposts/allp">every post</a>
- <li><a href="/users/<%= session['user_id'] %>">My Profile</a></li>
-<link rel="stylesheet" href="/main.css">
+<a class="nav" href="/users/<%= session['user_id']%>">Back To my Profile</a>
+<a class="nav" href="/sposts/allp">News Feed</a>
+<a class="nav" href="/sposts/everyp">See My Post</a>
