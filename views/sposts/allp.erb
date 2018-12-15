@@ -5,10 +5,10 @@
 <div class="grid-container">
 
 
-        <%@sposts.each do |spos|%>
+        <%@sposts.reverse.each do |spos|%>
 					<% user = User.find(spos.user_id)%>
 					<div class="grid-item">
-					Name:  <%= user.name %><hr>
+					Name:  <%= user.first_name %><hr>
 					Title: <%= spos.title %><hr>
 					<div class="scroll">Post: <%= spos.content%>
 					</div>

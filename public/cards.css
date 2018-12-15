@@ -1,4 +1,5 @@
-body{
+/* HEIGHT AND POSITIONS/ANIMATION FOR THE FRONT OF FLIP PAGE */
+body {
   height:45vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,6 +18,11 @@ body{
   position: relative;
 font-family: "Lucida Console", Monaco, monospace;
 }
+form {
+  text-align: left;
+}
+/* ********************** */
+/*  */
 .container h1{
   font-size: 50px;
   font-family: "Lucida Console", Monaco, monospace;
@@ -48,10 +54,6 @@ float: left;
 	transform-style: preserve-3d;
 
 }
-/* .container h2{
-  color:white;
-  font-size: 15px;
-} */
 
 .side {
 	position: absolute;
@@ -71,12 +73,8 @@ float: left;
 .content h2 {
 	position: relative;
 }
-/* .content ol {
-	margin-top: 50px;
-	line-height: 2em;
-} */
+
 .front {
-	/* z-index: 10; */
 background-image: url("/images/field1.jpg");
 background-repeat: no-repeat;
 background-size: cover;
@@ -92,19 +90,10 @@ background-size: cover;
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
-form {
-	text-align: left;
-
-
-}
-/* .back h2 {
-	margin: 0;
-} */
-
 
 
 /* **************************** */
-
+/* BUTTONS FOR THE BACK OF FLIP PAGE */
 .box {
   width:230px;
   height:80px;

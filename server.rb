@@ -11,11 +11,11 @@ else
 end
 
 class User < ActiveRecord::Base
-
+has_many :spost, dependent: :destroy
 end
 
 class Spost < ActiveRecord::Base
-
+  belongs_to :user
 end
 
 
@@ -65,7 +65,7 @@ get "/users/signup" do
 end
 
 post "/users/signup" do
-  @user =  User.new(name: params[:name], email: params[:email], birthday: params[:birthday], password: params[:password])
+  @user =  User.new(first_name: params[:first_name],last_name: params[:last_name], email: params[:email], birthday: params[:birthday], password: params[:password])
   @user.save
   session[:user_id] = @user.id
   redirect "/users/#{@user.id}"
@@ -87,6 +87,7 @@ get "/users/?" do
 post "/users/:id" do
   @user =  User.find(params["id"])
   @user.destroy
+  # @spost.destroy
 
     session["user_id"] = nil
     redirect "/"

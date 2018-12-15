@@ -9,11 +9,12 @@
 
   <div class="grid-container">
 
-  <% @sposts.each do |spo|%>
+  <% @sposts.reverse.each do |spo|%>
   <%if spo.user_id == session['user_id']%>
   <% user = User.find(spo.user_id)%>
 <div class="grid-item">
-Name:  <%= user.name %><hr>
+Name:  <%= user.first_name %><span>
+<%= user.last_name %><hr>
 Title <%= spo.title%><hr>
  <%= spo.content%>
 
