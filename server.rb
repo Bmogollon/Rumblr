@@ -110,18 +110,18 @@ post "/articles/article" do #CREATE
 end
 ### SEE ALL POST
 get "/articles/my-article" do
-  @articles = Article.all
+  @articles = Article.last(20)
   erb :"/articles/my-article"
 end
 
 ######
 
 get "/articles/all-article" do
-  @articles = Article.all
+  @articles = Article.last(20)
   erb :"/articles/all-article"
 end
 get "/articles/?" do
-  @articles = Article.all
+  @articles = Article.last(20)
   erb :"/articles/all-article"
 end
 
