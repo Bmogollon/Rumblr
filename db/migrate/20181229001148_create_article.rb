@@ -1,8 +1,8 @@
-class CreatePosts < ActiveRecord::Migration[5.2]
+class CreateArticle < ActiveRecord::Migration[5.2]
   def change
-    create_table :sposts do |t|
+    create_table :articles do |t|
       t.belongs_to :user, profile: true
-     t.string :title
+      t.string :title
       t.string :content
       t.integer :user_id
     end

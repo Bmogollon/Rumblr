@@ -11,10 +11,10 @@ else
 end
 
 class User < ActiveRecord::Base
-has_many :spost, dependent: :destroy
+has_many :article, dependent: :destroy
 end
 
-class Spost < ActiveRecord::Base
+class Article < ActiveRecord::Base
   belongs_to :user
 end
 
@@ -87,7 +87,7 @@ get "/users/?" do
 post "/users/:id" do
   @user =  User.find(params["id"])
   @user.destroy
-  # @spost.destroy
+
 
     session["user_id"] = nil
     redirect "/"
@@ -96,52 +96,52 @@ end
 
 # **************
 # POST
-get "/sposts/spost" do
+get "/articles/article" do
   if session['user_id'] == nil
     redirect '/'
     end
-    erb :"sposts/spost"
+    erb :"articles/article"
 end
 
-post "/sposts/spost" do #CREATE
-  @spost = Spost.new(title: params[:title], content: params[:content], user_id: session[:user_id])
-  @spost.save
-  redirect "/sposts/#{@spost.id}"
+post "/articles/article" do #CREATE
+  @article = Article.new(title: params[:title], content: params[:content], user_id: session[:user_id])
+  @article.save
+  redirect "/articles/my-article"
 end
 ### SEE ALL POST
-get "/sposts/allp" do
-  @sposts = Spost.all
-  erb :"/sposts/allp"
+get "/articles/my-article" do
+  @articles = Article.all
+  erb :"/articles/my-article"
 end
 
 ######
 
-get "/sposts/everyp" do
-  @sposts = Spost.all
-  erb :"/sposts/everyp"
+get "/articles/all-article" do
+  @articles = Article.all
+  erb :"/articles/all-article"
 end
-get "/sposts/?" do
-  @sposts = Spost.all
-  erb :"/sposts/everyp"
-end
-
-
-post "/sposts/:id" do
-  @spost =  Spost.find(params["id"])
-  @spost.destroy
-
-  redirect "/sposts/everyp"
+get "/articles/?" do
+  @articles = Article.all
+  erb :"/articles/all-article"
 end
 
 
+post "/articles/:id" do
+  @article =  Article.find(params["id"])
+  @article.destroy
 
-get "/sposts/everyp" do
-  @spost = Spost.last(20)
-
-  erb :"/sposts/everyp"
+  redirect "/articles/my-article"
 end
 
-get "/sposts/:id" do
-  @spost =  Spost.find(params["id"])
-  redirect "/sposts/everyp"
+
+
+get "/articles/all-article" do
+  @article = Article.last(20)
+
+  erb :"/articles/all-article"
+end
+
+get "/articles/:id" do
+  @article =  Article.find(params["id"])
+  redirect "/articles/all-article"
 end

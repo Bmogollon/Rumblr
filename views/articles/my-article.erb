@@ -1,0 +1,34 @@
+
+
+
+
+
+  <a class="nav" href="/users/<%= session['user_id']%>">Back To Profile</a>
+  <a class="nav" href="/articles/all-article">News Feed</a>
+  <a class="nav" href="/articles/article">Create Post</a>
+
+  <div class="grid-container">
+
+  <% @articles.reverse.each do |article|%>
+  <%if article.user_id == session['user_id']%>
+  <% user = User.find(article.user_id)%>
+<div class="grid-item">
+Name:  <%= user.first_name %><span>
+<%= user.last_name %><hr>
+Title <%= article.title%><hr>
+ <%= article.content%>
+
+  <form  action ="<%=article.id%>" method="post">
+    <input class = "nav" type="submit" name="delete" value="Delete Post">
+  </form>
+
+</div>
+
+<!-- </div> -->
+
+    <% end %>
+    <% end %>
+
+<!-- </div> -->
+
+</div>

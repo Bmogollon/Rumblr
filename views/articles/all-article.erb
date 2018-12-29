@@ -1,0 +1,21 @@
+<a class="nav" href="/users/<%= session['user_id']%>">Back To Profile</a>
+<a class="nav" href="/articles/my-article">See My Post</a>
+
+
+<div class="grid-container">
+
+
+        <%@articles.reverse.each do |article|%>
+					<% user = User.find(article.user_id)%>
+					<div class="grid-item">
+					Name:  <%= user.first_name %><hr>
+					Title: <%= article.title %><hr>
+					<div class="scroll">Post: <%= article.content%>
+					</div>
+
+				</div>
+
+          <% end %>
+
+
+			</div>
