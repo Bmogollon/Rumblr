@@ -1,5 +1,5 @@
 html{
-  background-image: url("images/picture2.jpg");
+  background-image: url("images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -28,10 +28,11 @@ form {
 
 .wrapper {
     width: 800px;
-    height: 450px;
+    height: 520px;
     position: relative;
     margin: 3% auto;
-    box-shadow: 2px 18px 70px 0px rgb(21, 131, 105);
+    box-shadow: 2px 18px 70px 0px lightyellow;
+    /* rgb(21, 131, 105) */
     overflow: hidden;
 }
 
@@ -178,8 +179,8 @@ padding-top: 356px;
 }
 
 .homeb {
-	background: linear-gradient(to right, black,transparent, black);
-	color: black;
+	background: linear-gradient(to right, lightblue,transparent, pink);
+	color: white;
 	width: 178px;
 	height: 56px;
 
@@ -207,7 +208,7 @@ padding-top: 356px;
 /* other css gets it as well*/
 /* ############################################################### */
 .box {
-	background: linear-gradient(to right, transparent, rgb(47, 45, 45));
+	background: linear-gradient(to right, transparent, rgb(224, 130, 201));
 	color: white;
 	width: 178px;
 	height: 56px;
