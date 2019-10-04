@@ -277,7 +277,7 @@ padding-top: 356px;
   grid-template-rows: 300px 300px 300px ;
   grid-row-gap: 170px;
   justify-content: center;
-  color: black;
+  color:black;
   font-weight: 100px;
   padding: 30px;
 }
@@ -286,7 +286,7 @@ padding-top: 356px;
   font-size: 13px;
   height: 400px;
 background-color: black;
-background: linear-gradient(to right, transparent, silver, black);
+background: linear-gradient(to right, transparent, rgb(190, 182, 191),rgb(176, 177, 168));
 
   text-align: center;
 
